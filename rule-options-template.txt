@@ -1,0 +1,8 @@
+access-rule
+  ipv4
+  from (zone)
+  to (zone)
+  action (allow/deny/discard)
+  source address name (object/group name)
+  service name (service name)
+  destination address name (object/group name)
