@@ -1,4 +1,4 @@
-# Author: trustytrojan
+# Author: github.com/trustytrojan
 
 # Module file for shared code between SonicWall scripts.
 
