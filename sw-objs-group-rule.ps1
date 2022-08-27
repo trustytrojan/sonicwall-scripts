@@ -1,4 +1,4 @@
-# Author: trustytrojan
+# Author: github.com/trustytrojan
 
 # The following script will
 # - create address objects provided by the $objs_csv file,
