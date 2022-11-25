@@ -7,8 +7,8 @@
 
 # Install and import Posh-SSH.
 # https://github.com/darkoperator/Posh-SSH
-Install-Module Posh-SSH -Force
-Import-Module Posh-SSH
+Install-Module "Posh-SSH" -Force
+Import-Module "Posh-SSH"
 
 # Wrapper functions for Write-Host
 function Write-Host:Info {
@@ -90,7 +90,7 @@ function Send-Line {
     [Parameter(Mandatory)]
     [string]$line,
 
-    # Regex expression for SonicWall response to match
+    # Regex or string for SonicWall response to match
     [Parameter()]
     $expect = $global:expect,
 
@@ -98,12 +98,12 @@ function Send-Line {
     [Parameter()]
     [Renci.SshNet.ShellStream]$stream = $global:stream
   )
-  if ($expect.GetType().Name -ne "Regex" -and $expect.GetType().Name -ne "String")
+  if (($expect.GetType().Name -ne "Regex") -and ($expect.GetType().Name -ne "String"))
     { throw "-expect parameter must be either regex or string"; return }
   Write-Host:Info "Sending '$line'..."
   $stream.WriteLine($line)
   $output = $stream.Expect($expect, (New-Object TimeSpan 0,0,3))
-  if ($null -eq $output -or $output.Length -eq 0)
+  if (($null -eq $output) -or ($output.Length -eq 0))
     { Exit-Script "SonicWall took too long to respond." -err }
   $output_arr = [System.Collections.ArrayList]$output.Split("`n")
   try { return $output_arr.GetRange(1, $output_arr.Count-1) }
