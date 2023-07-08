@@ -1,5 +1,3 @@
-# Author: github.com/trustytrojan
-
 # Module file for shared code between SonicWall scripts.
 
 # This module file MUST be in the same directory as the
