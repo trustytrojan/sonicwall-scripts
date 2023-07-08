@@ -1,5 +1,3 @@
-# Author: github.com/trustytrojan
-
 # The following script will create an SSH session with the
 # SonicWall information you provide, and ask it to display
 # its version info.
