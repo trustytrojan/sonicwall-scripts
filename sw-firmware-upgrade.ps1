@@ -1,5 +1,3 @@
-# Author: github.com/trustytrojan
-
 # The following script will create an SSH session with
 # the SonicWall information you provide, give it the path
 # to the firmware file to download from the SSH server you
