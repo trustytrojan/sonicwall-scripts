@@ -1,5 +1,3 @@
-# Author: github.com/trustytrojan
-
 # The following script will
 # - create address objects provided by the $objs_csv file,
 # - create an address group with name $group_name
